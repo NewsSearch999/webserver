@@ -9,9 +9,9 @@ export class MessageController {
     private readonly rmqService: RmqService,
     ) {}
 
-  @EventPattern('order_created')
+  @EventPattern('news_created')
   async handleNewsCreated(@Payload() data: any, @Ctx() context: RmqContext) {
-    
+
     this.messageService.message(data);
     this.rmqService.ack(context);
   }
