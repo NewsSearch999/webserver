@@ -13,6 +13,7 @@ export class NewsService {
     @Inject(MESSAGE_SERVICE) private messageClient: ClientProxy,
   ){}
 
+
   async createNews(request){
     const session = await this.newsRepository.startTransaction();
     try {
